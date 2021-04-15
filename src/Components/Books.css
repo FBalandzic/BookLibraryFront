@@ -1,0 +1,31 @@
+table, th, td {
+    border: 1px solid black;
+  }
+
+footer{
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: darkgray;
+}
+
+main{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%, -50%);
+}
+
+header{
+  background-color: darkgray;
+}
+
+Header.loginDiv{
+  float:right;
+}
+
+span{
+  display: flex;
+  justify-content: space-between;
+}
