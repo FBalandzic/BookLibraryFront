@@ -68,11 +68,11 @@ export class Books extends Component {
 
                         <tbody>
                             <tr>
-                                <th>isbn</th>
-                                <th>title</th>
-                                <th>author</th>
-                                <th>genre</th>
-                                <th>actions</th>
+                                <th>ISBN</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th colSpan="2">Actions</th>
                             </tr>
                             {this.renderTableData()}
                         </tbody>

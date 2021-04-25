@@ -21,11 +21,27 @@ header{
   background-color: darkgray;
 }
 
-Header.loginDiv{
-  float:right;
+.loginDiv{
+  display: flex;
+  justify-content: right;
 }
 
-span{
-  display: flex;
-  justify-content: space-between;
+.orangeText{
+  color: orange;
+}
+
+.loginForm input{
+   margin-right: 4px;
+}
+
+#allBooks td, #allBooks th{
+  padding: 4px;
+}
+
+#allBooks{
+  margin-top: 16px;
+}
+
+.fieldName{
+  min-width: 500px;
 }

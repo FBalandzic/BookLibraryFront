@@ -20,9 +20,13 @@ function Login({ setUser }) {
                         'password': password
                     })
                 });
-                const data = await response.json();
-                setUser(data);
-                history.push('/Books');
+                if (response.status == 200) {
+                    const data = await response.json();
+                    setUser(data);
+                    localStorage.setItem("isLoggedIn", true);
+                    history.push('/Books');
+                }
+
             }
         })();
 
@@ -31,10 +35,10 @@ function Login({ setUser }) {
     }
 
     return (
-        <div>
+        <div className="loginForm">
             <form onSubmit={handleSubmit}>
-                <input type="text" name="username" onChange={e => setUserName(e.target.value)} />
-                <input type="password" name="password" onChange={e => setPassword(e.target.value)} />
+                <input type="text" name="username" onChange={e => setUserName(e.target.value)} placeholder="username" />
+                <input type="password" name="password" onChange={e => setPassword(e.target.value)} placeholder="password" />
                 <button type="submit">Login</button>
             </form>
             <p>You don't have an account? <Link to="/SignUp">Sign up!</Link></p>

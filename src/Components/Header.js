@@ -7,21 +7,28 @@ function Header({ user, setUser }) {
 
     const handleSignOut = () => {
         setUser(null);
+        localStorage.setItem("isLoggedIn", false)
         history.push("/Home");
     };
 
     return (
         <header>
-            <p>ElanWave bookstore</p>
-            {!user && (
-                <div className="loginDiv" >
+            <div className="loginDiv" >
+                {!user && (
+
                     <Login setUser={setUser} />
-                </div>
-            )}
-            {user && (
-                <button onClick={handleSignOut}>Izloguj</button>
-            )}
+
+                )}
+                {user && (
+                    <>
+                        <span>Hello, {user.username}!</span>
+                        <button onClick={handleSignOut}>Izloguj</button>
+                    </>
+                )}
+            </div>
+            <h2>Elan<span className="orangeText">Wave</span> bookstore</h2>
         </header>
+
     )
 }
 
